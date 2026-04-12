@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+ 
+# Virtual environment
+.venv/
+venv/
+env/
+ 
+# Environment variables
+.env
+ 
+# Large genomics data files
+data/raw/*.fastq
+data/raw/*.fastq.gz
+data/raw/*.fq
+data/raw/*.fq.gz
+data/aligned/*.bam
+data/aligned/*.bai
+data/variants/*.vcf
+data/annotated/*.vcf
+*.bam
+*.bai
+*.vcf.gz
+*.tbi
+*.fa
+*.fasta
+*.fai
+*.dict
+ 
+# Logs
+logs/
+*.log
+ 
+# IDE
+.vscode/
+.idea/
+*.swp
+ 
+# OS
+.DS_Store
+Thumbs.db
+ 
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
