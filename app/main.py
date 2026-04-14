@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import fastqc, health
+from app.routers import fastqc, health, trimming
 
 
 app = FastAPI(
@@ -10,6 +10,7 @@ app = FastAPI(
 
 app.include_router(health.router, prefix="/api/v1")
 app.include_router(fastqc.router, prefix="/api/v1")
+app.include_router(trimming.router, prefix="/api/v1")
 
 @app.get("/")
 async def root():
