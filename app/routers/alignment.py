@@ -6,7 +6,7 @@ from app.models.pipeline import AlignmentResponse
 router = APIRouter(tags=["Alignment"])
 
 @router.post("/run/align", response_model=AlignmentResponse)
-async def align(file: UploadFile = File(...)):
+async def alignment_endpoint(file: UploadFile = File(...)):
     if not file.filename.endswith((".fastq", ".fastq.gz", ".fq", ".fq.gz")):
         raise HTTPException(
             status_code=400, 
