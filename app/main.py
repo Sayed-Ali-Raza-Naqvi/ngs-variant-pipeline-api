@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import fastqc, health, trimming, alignment
+from app.routers import annotate, fastqc, health, trimming, alignment, variant_call
 
 
 app = FastAPI(
@@ -12,6 +12,8 @@ app.include_router(health.router, prefix="/api/v1")
 app.include_router(fastqc.router, prefix="/api/v1")
 app.include_router(trimming.router, prefix="/api/v1")
 app.include_router(alignment.router, prefix="/api/v1")
+app.include_router(variant_call.router, prefix="/api/v1")
+app.include_router(annotate.router, prefix="/api/v1")
 
 @app.get("/")
 async def root():
