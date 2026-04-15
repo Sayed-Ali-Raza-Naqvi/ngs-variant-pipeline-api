@@ -12,6 +12,7 @@ mkdir -p data/variants
 mkdir -p data/annotated
 mkdir -p logs
 mkdir -p tests
+mkdir -p reference
  
 touch app/__init__.py
 touch app/main.py
