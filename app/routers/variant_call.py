@@ -1,5 +1,5 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException
-from app.models import VariantCallingResponse
+from app.models.pipeline import VariantCallingResponse
 from app.services.variant_service import run_variant_calling
 
 
