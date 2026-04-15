@@ -40,3 +40,21 @@ class AlignmentResponse(BaseModel):
     stderr: Optional[str] = None
     bai_path: Optional[str] = None
     bam_path: Optional[str] = None
+
+
+class VariantCallingResponse(BaseModel):
+    success: bool
+    step: str = "variant_calling"
+    message: str
+    stdout: Optional[str] = None
+    stderr: Optional[str] = None
+    vcf_path: Optional[str] = None
+
+
+class AnnotationResponse(BaseModel):
+    success: bool
+    step: str = "annotation"
+    message: str
+    stdout: Optional[str] = None
+    stderr: Optional[str] = None
+    annotated_vcf_path: Optional[str] = None
