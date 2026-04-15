@@ -50,3 +50,13 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+# reference genome files
+reference/*.fa
+reference/*.fasta
+reference/*.fa.gz
+reference/*.fasta.gz
+reference/*.fa.fai
+reference/*.fasta.fai
+reference/*.fa.dict
+reference/*.fasta.dict
