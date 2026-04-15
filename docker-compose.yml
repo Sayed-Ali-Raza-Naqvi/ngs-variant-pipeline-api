@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: ngs_pipeline_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Pipeline data folders — persisted on host
+      - ./data:/app/data
+      - ./logs:/app/logs
+      # Mount your reference genome folder here
+      # Place hg38.fa (+ .fai, .dict, .amb, .ann, .bwt, .pac, .sa) in ./reference/
+      - ./reference:/app/reference
+    environment:
+      - REFERENCE_GENOME=/app/reference/hg38.fa
+      - THREADS=4
+    restart: unless-stopped
