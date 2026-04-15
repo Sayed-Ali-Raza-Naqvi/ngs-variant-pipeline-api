@@ -30,3 +30,13 @@ class TrimmomaticResponse(BaseModel):
     stdout: Optional[str] = None
     stderr: Optional[str] = None
     output_path: Optional[str] = None
+
+
+class AlignmentResponse(BaseModel):
+    success: bool
+    step: str = "alignment"
+    message: str
+    stdout: Optional[str] = None
+    stderr: Optional[str] = None
+    bai_path: Optional[str] = None
+    bam_path: Optional[str] = None
