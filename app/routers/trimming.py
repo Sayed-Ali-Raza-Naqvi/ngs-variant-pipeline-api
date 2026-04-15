@@ -7,7 +7,7 @@ router = APIRouter(tags=["Trimming"])
 
 @router.post("/trimming", response_model=TrimmingResponse)
 async def trimming_endpoint(file: UploadFile = File(...)):
-    if not file.filename.endswith(".fastq", ".fastq.gz", ".fq", ".fq.gz"):
+    if not file.filename.endswith((".fastq", ".fastq.gz", ".fq", ".fq.gz")):
         raise HTTPException(
             status_code=400, 
             detail="Invalid file format. Please upload a .fastq, .fastq.gz, .fq, or .fq.gz file."
