@@ -8,7 +8,7 @@ router = APIRouter(tags=["Annotate"])
 @router.post("/run/annotate", response_model=AnnotationResponse)
 async def annotation_endpoint(file: UploadFile = File(...)):
     if not file.filename.endswith(".vcf"):
-        return HTTPException(status_code=400, detail="Only VCF files are accepted.")
+        raise HTTPException(status_code=400, detail="Only VCF files are accepted.")
     
     file_bytes = await file.read()
     result = run_annotation(file_bytes, file.filename)
