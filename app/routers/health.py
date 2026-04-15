@@ -5,7 +5,7 @@ from app.models.pipeline import HealthResponse
 router = APIRouter(tags=["Health"])
 
 @router.get("/health", response_model=HealthResponse)
-async def health_check():
+async def health_check_endpoint():
     """
     Health check endpoint to verify that the API is running.
     """
