@@ -25,7 +25,7 @@ class FastQCResponse(BaseModel):
 
 class TrimmomaticResponse(BaseModel):
     success: bool
-    setp: str = "trimmomatic"
+    step: str = "trimmomatic"
     message: str
     stdout: Optional[str] = None
     stderr: Optional[str] = None
