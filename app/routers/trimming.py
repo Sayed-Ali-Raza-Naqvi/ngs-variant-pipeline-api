@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File
 from app.models.pipeline import TrimmingResponse
-from app.services.trimming_service import run_trimming
+from app.services.trimming_service import run_trimmomatic
 
 
 router = APIRouter(tags=["Trimming"])
@@ -14,7 +14,7 @@ async def trimming_endpoint(file: UploadFile = File(...)):
         )
 
     file_bytes = await file.read()
-    result = run_trimming(file_bytes, file.filename)
+    result = run_trimmomatic(file_bytes, file.filename)
 
     return TrimmingResponse(
         success=result["success"],
